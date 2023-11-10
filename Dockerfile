@@ -23,8 +23,8 @@ RUN apk --no-cache --update add ca-certificates wget && \
     wget ${ALPINE_GLIBC_BASE_URL}/${ALPINE_GLIBC_VERSION}/glibc-${ALPINE_GLIBC_VERSION}.apk && \
     wget ${ALPINE_GLIBC_BASE_URL}/${ALPINE_GLIBC_VERSION}/glibc-bin-${ALPINE_GLIBC_VERSION}.apk && \
     wget ${ALPINE_GLIBC_BASE_URL}/${ALPINE_GLIBC_VERSION}/glibc-i18n-${ALPINE_GLIBC_VERSION}.apk && \
-    apk add glibc-bin-${ALPINE_GLIBC_VERSION}.apk glibc-i18n-${ALPINE_GLIBC_VERSION}.apk glibc-${ALPINE_GLIBC_VERSION}.apk && \
-    rm -rf *.apk /etc/apk/keys/sgerrand.rsa.pub
+    apk add glibc-bin-${ALPINE_GLIBC_VERSION}.apk glibc-i18n-${ALPINE_GLIBC_VERSION}.apk glibc-${ALPINE_GLIBC_VERSION}.apk
+Run rm -rf *.apk /etc/apk/keys/sgerrand.rsa.pub
 
 COPY ./locale.md /locale.md
 RUN cat locale.md | xargs -i /usr/glibc-compat/bin/localedef -i {} -f UTF-8 {}.UTF-8
