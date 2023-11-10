@@ -1,4 +1,4 @@
-FROM buildpack-deps:latest
+FROM debian:latest
 LABEL MAINTAINER="José Carlos Paiva <josepaiva94@gmail.com>,José Paulo Leal <zp@dcc.fc.up.pt>"
 
 # Mooshak environment variables
