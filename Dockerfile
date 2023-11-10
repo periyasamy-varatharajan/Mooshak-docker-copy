@@ -22,7 +22,7 @@ ENV LC_ALL=en_US.UTF-8 \
     LANGUAGE=en_US.UTF-8
 
 # install Mooshak prerequisites
-RUN apt-get install -y tcl apache2 apache2-suexec supervisor \
+RUN apt-get install -y tcl apache2 apache2-suexec-custom supervisor \
     lpr time cron host rsync libxml2-utils xsltproc
 
 # cleanup unnecessary files
