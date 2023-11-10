@@ -9,10 +9,12 @@ RUN apt-get update
 RUN apt-get upgrade -y
 RUN apt-get install -y apt-utils build-essential
 
+
 # set locale to UTF8
 RUN apt-get install -y locales
 RUN sed -i -e 's/# en_US.UTF-8 UTF-8/en_US.UTF-8 UTF-8/' /etc/locale.gen && \
     locale-gen
+
 
 # language environment variables
 ENV LC_ALL=en_US.UTF-8 \
